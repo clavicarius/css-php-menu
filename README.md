@@ -11,7 +11,7 @@ Zentrale CSS-Tokens und Basiskomponenten für die Website der Kammeroper Augsbur
 
 ## Beispielseite
 
-Die [Beispielseite](index.html) zeigt eine Lorem-ipsum-Website mit Haupt- und
+Die [Beispielseite](https://clavicarius.github.io/css-php-menu/) zeigt eine Lorem-ipsum-Website mit Haupt- und
 Servicenavigation. Sie kann lokal über einen beliebigen statischen Webserver
 aufgerufen werden. Bei jedem Push auf `main` veröffentlicht der Workflow
 `.github/workflows/pages.yml` die Seite auf GitHub Pages; alternativ lässt sich
