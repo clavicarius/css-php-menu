@@ -32,14 +32,14 @@ tatsächlich verwendeten Kombinationen erneut zu prüfen.
 
 ## Schriftdateien
 
-Die Schriftdeklarationen erwarten lokal bereitgestellte WOFF2-Dateien unter
-`assets/fonts/`:
+Die Schriftdateien liegen lokal im WOFF2-Format unter `assets/fonts/`:
 
 - `cormorant-garamond-variable.woff2`
+- `cormorant-garamond-italic-variable.woff2`
 - `source-sans-3-variable.woff2`
+- `source-sans-3-italic-variable.woff2`
 
-Die Dateien sind in diesem Repository nicht vorhanden; bis sie ergänzt werden,
-greifen die definierten System-Fallbacks. Es gibt keine externe Font-Abhängigkeit.
+Es gibt keine externe Font-Abhängigkeit.
 
 ## Architekturentscheidungen
 
