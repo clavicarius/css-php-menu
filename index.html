@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Eine Beispielseite zum Betrachten der Kopf- und Fußnavigation.">
+    <title>Beispielseite – Kammeroper Augsburg</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/demo.css">
+  </head>
+  <body>
+    <a class="skip-link" href="#inhalt">Zum Inhalt springen</a>
+    <header class="site-header">
+      <a class="site-brand" href="#start" aria-label="Kammeroper Augsburg – Startseite">
+        <span class="site-brand__name">Kammeroper</span>
+        <span class="site-brand__location">Augsburg</span>
+      </a>
+      <nav class="site-nav" aria-label="Hauptnavigation">
+        <ul class="site-nav__links">
+          <li><a href="#start">Start</a></li>
+          <li class="has-submenu">
+            <a href="#programm">Programm</a>
+            <details>
+              <summary aria-label="Untermenü Programm öffnen">Unterseiten</summary>
+              <ul>
+                <li><a href="#spielplan">Spielplan</a></li>
+                <li><a href="#konzerte">Konzerte</a></li>
+                <li><a href="#vermittlung">Musikvermittlung</a></li>
+              </ul>
+            </details>
+          </li>
+          <li class="has-submenu">
+            <a href="#ensemble">Ensemble</a>
+            <details>
+              <summary aria-label="Untermenü Ensemble öffnen">Unterseiten</summary>
+              <ul>
+                <li><a href="#kuenstler">Künstler:innen</a></li>
+                <li><a href="#geschichte">Geschichte</a></li>
+              </ul>
+            </details>
+          </li>
+          <li><a href="#besuch">Ihr Besuch</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main id="inhalt">
+      <section class="hero" id="start" aria-labelledby="hero-title">
+        <p class="eyebrow">Musiktheater in Augsburg</p>
+        <h1 id="hero-title">Große Geschichten.<br>Ganz nah.</h1>
+        <p class="hero__copy">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Entdecken Sie Musiktheater, das berührt, überrascht und Menschen zusammenbringt.</p>
+        <a class="button" href="#spielplan">Zum Spielplan</a>
+      </section>
+
+      <section class="content-section" id="programm" aria-labelledby="programm-title">
+        <div class="section-heading">
+          <p class="eyebrow">Was Sie erwartet</p>
+          <h2 id="programm-title">Ein Haus voller Möglichkeiten</h2>
+        </div>
+        <div class="feature-grid">
+          <article class="feature-card" id="spielplan">
+            <span class="feature-card__number" aria-hidden="true">01</span>
+            <h3>Der Spielplan</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus at augue eget arcu dictum varius duis.</p>
+            <a href="#besuch">Alle Vorstellungen ansehen</a>
+          </article>
+          <article class="feature-card" id="konzerte">
+            <span class="feature-card__number" aria-hidden="true">02</span>
+            <h3>Konzerte &amp; Begegnungen</h3>
+            <p>Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud.</p>
+            <a href="#besuch">Mehr über unser Programm</a>
+          </article>
+          <article class="feature-card" id="vermittlung">
+            <span class="feature-card__number" aria-hidden="true">03</span>
+            <h3>Musik für alle</h3>
+            <p>Quisque sagittis purus sit amet volutpat consequat mauris nunc congue. Pellentesque habitant morbi tristique.</p>
+            <a href="#besuch">Angebote entdecken</a>
+          </article>
+        </div>
+      </section>
+
+      <section class="visit-section" id="besuch" aria-labelledby="besuch-title">
+        <div>
+          <p class="eyebrow">Wir freuen uns auf Sie</p>
+          <h2 id="besuch-title">Ihr nächster Theaterabend wartet.</h2>
+        </div>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc sed velit dignissim sodales ut eu sem integer. Wir helfen Ihnen gern bei der Planung Ihres Besuchs.</p>
+        <a class="button button--light" href="#kontakt">Besuch planen</a>
+      </section>
+
+      <section class="visually-hidden" aria-label="Weitere Beispielseiten">
+        <h2 id="ensemble">Unser Ensemble</h2>
+        <p id="kuenstler">Lorem ipsum dolor sit amet.</p>
+        <p id="geschichte">Lorem ipsum dolor sit amet.</p>
+        <p id="barrierefreiheit">Informationen zur Barrierefreiheit.</p>
+        <p id="impressum">Impressum: Lorem ipsum dolor sit amet.</p>
+        <p id="datenschutz">Datenschutzhinweise: Lorem ipsum dolor sit amet.</p>
+        <p id="presse">Presse: Lorem ipsum dolor sit amet.</p>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="site-footer__main">
+        <a class="site-brand site-brand--footer" href="#start">
+          <span class="site-brand__name">Kammeroper</span>
+          <span class="site-brand__location">Augsburg</span>
+        </a>
+        <nav class="footer-nav" aria-label="Servicenavigation">
+          <h2>Service</h2>
+          <ul>
+            <li><a href="#besuch">Anfahrt &amp; Besuch</a></li>
+            <li><a href="#kontakt">Kontakt</a></li>
+            <li><a href="#barrierefreiheit">Barrierefreiheit</a></li>
+          </ul>
+        </nav>
+        <nav class="footer-nav" aria-label="Rechtliche Informationen">
+          <h2>Informationen</h2>
+          <ul>
+            <li><a href="#impressum">Impressum</a></li>
+            <li><a href="#datenschutz">Datenschutz</a></li>
+            <li><a href="#presse">Presse</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="site-footer__bottom">
+        <p id="kontakt">Kammeroper Augsburg · Loremstraße 12 · 86150 Augsburg</p>
+        <p>© 2025 Kammeroper Augsburg</p>
+      </div>
+    </footer>
+  </body>
+</html>
