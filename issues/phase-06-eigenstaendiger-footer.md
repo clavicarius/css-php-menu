@@ -1,8 +1,8 @@
-# Phase 6: Eigenständiger Footer
+# Phase 6 (#12): Eigenständiger Footer
 
 **Typ:** Umsetzungsphase
 **Bezug:** Eltern-Issue #2; CSS-Architektur gemäß README und ADRs 0001, 0002 und 0004 beachten
-**Abhängigkeiten:** Phase 1 – semantische Struktur; Phase 2 – Validierungs-/Renderer-Entscheidungen
+**Abhängigkeiten:** Phase 1 (#7) – semantische Struktur; Phase 2 (#8) – Validierungs-/Renderer-Entscheidungen
 
 ## Ziel
 

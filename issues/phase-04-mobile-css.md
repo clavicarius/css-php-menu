@@ -1,8 +1,8 @@
-# Phase 4: Responsive Mobile-Navigation
+# Phase 4 (#10): Responsive Mobile-Navigation
 
 **Typ:** Umsetzungsphase
 **Bezug:** Eltern-Issue #2; CSS-Architektur gemäß README und ADRs 0001, 0002 und 0004 beachten
-**Abhängigkeiten:** Phase 1 – HTML-Prototyp; Phase 2 – Renderer; Phase 3 – Desktop-CSS
+**Abhängigkeiten:** Phase 1 (#7) – HTML-Prototyp; Phase 2 (#8) – Renderer; Phase 3 (#9) – Desktop-CSS
 
 ## Ziel
 

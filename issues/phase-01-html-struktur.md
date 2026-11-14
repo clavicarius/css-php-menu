@@ -1,4 +1,4 @@
-# Phase 1: Semantischer HTML-Prototyp der Hauptnavigation
+# Phase 1 (#7): Semantischer HTML-Prototyp der Hauptnavigation
 
 **Typ:** Umsetzungsphase
 **Bezug:** Eltern-Issue #2
@@ -19,7 +19,7 @@ Das Repository enthält inzwischen ein zentrales CSS-Designsystem unter `css/`, 
 - `details`/`summary` als native Lösung prüfen; Grenzen bei Exklusivität, Hover, Fokus und verschachtelten Untermenüs dokumentieren.
 - Normale Tab-Reihenfolge und sichtbaren Tastaturfokus sicherstellen.
 - Bedienbarkeit ohne JavaScript prüfen.
-- Die bestehende Navigations-CSS in `css/components/navigation.css` als Designsystem-Baseline berücksichtigen; die fertige visuelle Ausgestaltung bleibt Phase 3 und 4 vorbehalten.
+- Die bestehende Navigations-CSS in `css/components/navigation.css` als Designsystem-Baseline berücksichtigen; die fertige visuelle Ausgestaltung bleibt Phase 3 (#9) und 4 (#10) vorbehalten.
 
 ## Akzeptanzkriterien
 

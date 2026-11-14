@@ -1,4 +1,4 @@
-# Phase 8: Einbindung in das Website-Layout
+# Phase 8 (#14): Einbindung in das Website-Layout
 
 **Typ:** Umsetzungsphase
 **Bezug:** Eltern-Issue #2
@@ -28,7 +28,7 @@ Das Repository enthält aktuell das CSS-Designsystem, jedoch keine PHP-Anwendung
 - Hauptmenü und Footermenü bleiben vollständig unabhängig.
 - Die Zielanwendung und ihr Layout sind ausdrücklich identifiziert; `css/main.css` wird zentral und nicht komponentenweise wiederholt eingebunden.
 - CSS und JavaScript werden nur gemäß Komponentenbedarf eingebunden; Footer benötigt kein JavaScript.
-- Die Abnahme aus Phase 7 bleibt nach der Integration erfolgreich.
+- Die Abnahme aus Phase 7 (#13) bleibt nach der Integration erfolgreich.
 
 ## Definition of Done
 
