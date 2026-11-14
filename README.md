@@ -32,3 +32,32 @@ Die Schriftdeklarationen erwarten lokal bereitgestellte WOFF2-Dateien unter
 
 Die Dateien sind in diesem Repository nicht vorhanden; bis sie ergänzt werden,
 greifen die definierten System-Fallbacks. Es gibt keine externe Font-Abhängigkeit.
+
+## Architekturentscheidungen
+
+Die Gründe und Folgen der Designsystem-Entscheidungen sind in den
+[Architecture Decision Records](docs/adr/README.md) dokumentiert.
+
+## Vorgaben für Änderungen
+
+- `css/main.css` bleibt der zentrale Einstiegspunkt; neue Stylesheets werden dort
+  in der Reihenfolge Tokens, Basisstile, Komponenten eingebunden.
+- Komponenten verwenden semantische Tokens statt eigener Farbwerte. Neue
+  Farbwerte werden zuerst als Palette-Tokens angelegt und anschließend semantisch
+  zugeordnet.
+- Vor der Verwendung einer Text-, UI- oder Fokusfarbkombination ist ihr Kontrast
+  zu prüfen: mindestens 4,5:1 für normalen Text und 3:1 für großen Text,
+  Bedienelemente und grafische Informationen.
+- Gold ist auf hellen Flächen kein Textfarbton. Status und Bedeutung dürfen nie
+  allein durch Farbe vermittelt werden.
+- Fokus muss sichtbar bleiben; Animationen berücksichtigen
+  `prefers-reduced-motion`. Layouts und Schriftgrößen müssen auf schmalen
+  Viewports funktionieren.
+- Schriften werden nur lokal und in benötigten Schnitten/Formaten eingebunden.
+  Vor dem Einchecken sind Lizenz und tatsächliches Vorhandensein der Fontdateien
+  zu prüfen.
+
+Die dokumentierten Farbwerte sind ein geprüfter Ausgangspunkt, aber noch nicht
+als finale Markenpalette freigegeben. Bei Änderungen an Palette, Typografie oder
+CSS-Architektur ist der passende ADR zu aktualisieren oder ein neuer ADR
+hinzuzufügen.
