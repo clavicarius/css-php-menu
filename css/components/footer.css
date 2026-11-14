@@ -1,0 +1,9 @@
+.site-footer {
+  background-color: var(--color-primary);
+  color: var(--color-text-inverse);
+  padding-block: var(--space-5);
+}
+
+.site-footer a {
+  color: inherit;
+}

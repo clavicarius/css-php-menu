@@ -1,0 +1,69 @@
+:root {
+  --palette-primary-100: #f2e6e9;
+  --palette-primary-300: #c98a9b;
+  --palette-primary-500: #641f32;
+  --palette-primary-700: #451522;
+  --palette-primary-900: #2a0d15;
+
+  --palette-secondary-100: #ffffff;
+  --palette-secondary-300: #f5f0e6;
+  --palette-secondary-500: #e7dfd3;
+  --palette-secondary-700: #cfc3b3;
+  --palette-secondary-900: #a99b89;
+
+  --palette-accent-100: #f8f1e5;
+  --palette-accent-300: #d8bd91;
+  --palette-accent-500: #b08d57;
+  --palette-accent-700: #80633d;
+  --palette-accent-900: #4f3b25;
+
+  --palette-neutral-100: #ffffff;
+  --palette-neutral-300: #f5f0e6;
+  --palette-neutral-500: #8a8177;
+  --palette-neutral-700: #514b48;
+  --palette-neutral-900: #292629;
+
+  --palette-success-100: #e8f3ec;
+  --palette-success-300: #a7cbb1;
+  --palette-success-500: #3b7a50;
+  --palette-success-700: #245336;
+  --palette-success-900: #163a25;
+
+  --palette-warning-100: #fff4dc;
+  --palette-warning-300: #e7bd68;
+  --palette-warning-500: #b07d00;
+  --palette-warning-700: #765100;
+  --palette-warning-900: #4f3600;
+
+  --palette-error-100: #fceaec;
+  --palette-error-300: #d98a94;
+  --palette-error-500: #b43e4d;
+  --palette-error-700: #842936;
+  --palette-error-900: #571a23;
+
+  --palette-info-100: #e7f1f8;
+  --palette-info-300: #8ebad6;
+  --palette-info-500: #347ba3;
+  --palette-info-700: #205676;
+  --palette-info-900: #123a50;
+
+  --color-background: var(--palette-primary-500);
+  --color-surface: var(--palette-secondary-300);
+  --color-surface-alt: var(--palette-secondary-500);
+  --color-primary: var(--palette-primary-500);
+  --color-primary-hover: var(--palette-primary-700);
+  --color-secondary: var(--palette-secondary-300);
+  --color-accent: var(--palette-accent-500);
+  --color-accent-strong: var(--palette-accent-700);
+  --color-text: var(--palette-neutral-900);
+  --color-text-muted: var(--palette-neutral-700);
+  --color-text-inverse: var(--palette-secondary-300);
+  --color-border: var(--palette-neutral-700);
+  --color-border-strong: var(--palette-neutral-700);
+  --color-focus: var(--palette-accent-700);
+  --color-focus-backdrop: var(--palette-secondary-100);
+  --color-success: var(--palette-success-700);
+  --color-warning: var(--palette-warning-700);
+  --color-error: var(--palette-error-700);
+  --color-info: var(--palette-info-700);
+}
