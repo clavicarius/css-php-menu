@@ -2,6 +2,26 @@ document.querySelectorAll(".site-nav").forEach((navigation) => {
   const toggle = navigation.querySelector(".site-nav__toggle");
   const panel = navigation.querySelector(".site-nav__panel");
 
+  navigation.addEventListener("keydown", (event) => {
+    if (event.key !== "Escape") {
+      return;
+    }
+
+    const submenu = event.target instanceof Element
+      ? event.target.closest("details[open]")
+      : null;
+    if (!submenu) {
+      return;
+    }
+
+    const summary = submenu.querySelector(":scope > summary");
+    if (summary) {
+      event.preventDefault();
+      submenu.open = false;
+      summary.focus({ preventScroll: true });
+    }
+  });
+
   if (!toggle || !panel || typeof panel.hidePopover !== "function") {
     return;
   }
@@ -26,8 +46,13 @@ document.querySelectorAll(".site-nav").forEach((navigation) => {
     }
   };
 
-  panel.addEventListener("toggle", () => {
+  const updateExpanded = () => {
     toggle.setAttribute("aria-expanded", String(panel.matches(":popover-open")));
+  };
+  updateExpanded();
+
+  panel.addEventListener("toggle", () => {
+    updateExpanded();
     updatePanelSize();
     if (
       !panel.matches(":popover-open")
