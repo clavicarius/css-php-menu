@@ -46,6 +46,12 @@ greifen die definierten System-Fallbacks. Es gibt keine externe Font-Abhängigke
 Die Gründe und Folgen der Designsystem-Entscheidungen sind in den
 [Architecture Decision Records](docs/adr/README.md) dokumentiert.
 
+## Navigationsprototyp
+
+Der semantische [HTML-Prototyp der Hauptnavigation](prototypes/navigation.html)
+und seine [Interaktions- und Prüfhinweise](docs/navigation-prototype.md) zeigen
+die native Bedienung verschachtelter Untermenüs ohne JavaScript.
+
 ## Vorgaben für Änderungen
 
 - `css/main.css` bleibt der zentrale Einstiegspunkt; neue Stylesheets werden dort

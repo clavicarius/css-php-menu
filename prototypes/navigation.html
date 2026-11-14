@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Hauptnavigation – HTML-Prototyp</title>
+    <link rel="stylesheet" href="../css/main.css">
+  </head>
+  <body>
+    <header>
+      <h1>Hauptnavigation – HTML-Prototyp</h1>
+    </header>
+
+    <nav class="site-nav" aria-label="Hauptnavigation">
+      <ul class="site-nav__links">
+        <li>
+          <a href="/spielplan/">Spielplan</a>
+          <details>
+            <summary>Untermenü von Spielplan</summary>
+            <ul>
+              <li>
+                <a href="/spielplan/2026-27/">Spielzeit 2026/27</a>
+                <details>
+                  <summary>Untermenü von Spielzeit 2026/27</summary>
+                  <ul>
+                    <li><a href="/spielplan/2026-27/oper/">Oper</a></li>
+                    <li><a href="/spielplan/2026-27/konzerte/">Konzerte</a></li>
+                  </ul>
+                </details>
+              </li>
+              <li><a href="/spielplan/rueckblick/">Rückblick</a></li>
+            </ul>
+          </details>
+        </li>
+        <li>
+          <a href="/besuch/">Ihr Besuch</a>
+          <details>
+            <summary>Untermenü von Ihr Besuch</summary>
+            <ul>
+              <li><a href="/besuch/anfahrt/">Anfahrt</a></li>
+              <li><a href="/besuch/barrierefreiheit/">Barrierefreiheit</a></li>
+            </ul>
+          </details>
+        </li>
+        <li><a href="/ensemble/">Ensemble</a></li>
+      </ul>
+    </nav>
+
+    <main>
+      <p>
+        Die Links navigieren unabhängig von den nativen Untermenü-Schaltern.
+        Öffne ein Untermenü mit Enter oder Leertaste und erreiche seine Links
+        anschließend mit Tab.
+      </p>
+    </main>
+  </body>
+</html>
