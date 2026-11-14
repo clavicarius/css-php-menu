@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Hauptnavigation – HTML-Prototyp</title>
     <link rel="stylesheet" href="../css/main.css">
+    <script src="../js/navigation.js" defer></script>
   </head>
   <body>
     <header>
@@ -12,38 +13,46 @@
     </header>
 
     <nav class="site-nav" aria-label="Hauptnavigation">
-      <ul class="site-nav__links">
-        <li>
-          <a href="/spielplan/">Spielplan</a>
-          <details>
-            <summary>Untermenü von Spielplan</summary>
-            <ul>
-              <li>
-                <a href="/spielplan/2026-27/">Spielzeit 2026/27</a>
-                <details>
-                  <summary>Untermenü von Spielzeit 2026/27</summary>
-                  <ul>
-                    <li><a href="/spielplan/2026-27/oper/">Oper</a></li>
-                    <li><a href="/spielplan/2026-27/konzerte/">Konzerte</a></li>
-                  </ul>
-                </details>
-              </li>
-              <li><a href="/spielplan/rueckblick/">Rückblick</a></li>
-            </ul>
-          </details>
-        </li>
-        <li>
-          <a href="/besuch/">Ihr Besuch</a>
-          <details>
-            <summary>Untermenü von Ihr Besuch</summary>
-            <ul>
-              <li><a href="/besuch/anfahrt/">Anfahrt</a></li>
-              <li><a href="/besuch/barrierefreiheit/">Barrierefreiheit</a></li>
-            </ul>
-          </details>
-        </li>
-        <li><a href="/ensemble/">Ensemble</a></li>
-      </ul>
+      <button class="site-nav__toggle" type="button" aria-controls="site-nav-panel"
+        aria-expanded="false" popovertarget="site-nav-panel">
+        Menü öffnen
+      </button>
+      <div class="site-nav__panel" id="site-nav-panel" popover="auto">
+        <button class="site-nav__close" type="button" popovertarget="site-nav-panel"
+          popovertargetaction="hide">Menü schließen</button>
+        <ul class="site-nav__links">
+          <li>
+            <a href="/spielplan/">Spielplan</a>
+            <details name="site-nav-level-1">
+              <summary>Untermenü von Spielplan</summary>
+              <ul>
+                <li>
+                  <a href="/spielplan/2026-27/">Spielzeit 2026/27</a>
+                  <details name="site-nav-level-2">
+                    <summary>Untermenü von Spielzeit 2026/27</summary>
+                    <ul>
+                      <li><a href="/spielplan/2026-27/oper/">Oper</a></li>
+                      <li><a href="/spielplan/2026-27/konzerte/">Konzerte</a></li>
+                    </ul>
+                  </details>
+                </li>
+                <li><a href="/spielplan/rueckblick/">Rückblick</a></li>
+              </ul>
+            </details>
+          </li>
+          <li>
+            <a href="/besuch/">Ihr Besuch</a>
+            <details name="site-nav-level-1">
+              <summary>Untermenü von Ihr Besuch</summary>
+              <ul>
+                <li><a href="/besuch/anfahrt/">Anfahrt</a></li>
+                <li><a href="/besuch/barrierefreiheit/">Barrierefreiheit</a></li>
+              </ul>
+            </details>
+          </li>
+          <li><a href="/ensemble/">Ensemble</a></li>
+        </ul>
+      </div>
     </nav>
 
     <main>

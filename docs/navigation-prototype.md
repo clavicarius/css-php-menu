@@ -2,31 +2,39 @@
 
 Der HTML-Prototyp liegt unter [`prototypes/navigation.html`](../prototypes/navigation.html).
 Er verwendet die vorhandenen Navigationsklassen und `css/main.css` als Designsystem-
-Baseline; er ergänzt keine eigenen Stilregeln. Es gibt keine Skripte oder
+Baseline. Das optionale Skript erweitert die nativen Popover-Aktionen ohne externe
 JavaScript-Abhängigkeiten.
 
 ## Native Interaktion und Fokus
 
 - Jeder Eintrag ist ein normaler Link. Bei Einträgen mit Kindern ist das
   jeweilige `details`/`summary` ein unabhängiger Schalter daneben.
+- In schmalen Ansichten öffnet der Menüschalter ein natives
+  `popover="auto"`-Panel. Die Schließen-Schaltfläche, Escape und ein Klick
+  außerhalb schließen es nativ; `js/navigation.js` schließt es zusätzlich bei
+  Linkauswahl und beim Wechsel zur Desktopbreite. Ein Layout mit PHP-gerenderter
+  Navigation bindet dieses Skript mit `defer` ein, um dieselben Ergänzungen zu
+  erhalten.
+- Fehlt die Popover-Unterstützung, bleiben die Links ohne
+  Umschalter sichtbar. Untermenüs verwenden exklusive `details`-Gruppen je Ebene,
+  damit jeweils nur ein Navigationspfad geöffnet ist.
 - `summary` ist nativ per Tastatur bedienbar. Mit Enter oder Leertaste wird das
   zugehörige Untermenü geöffnet oder geschlossen; seine Links folgen danach in
   der normalen Tab-Reihenfolge. Verschachtelte Ebenen werden durch Öffnen des
   jeweiligen übergeordneten Untermenüs erreicht.
 - Geschlossene `details`-Inhalte sind nicht in der Tab-Reihenfolge. Beim Öffnen
   wird der Fokus nicht automatisch in das Untermenü verschoben.
-- Der Fokus bleibt über die bestehende `:focus-visible`-Regel in
-  `css/base/global.css` sichtbar. Die Seite verwendet weder eigene Fokusregeln
-  noch `menu`-/`menuitem`-Rollen.
+- Der Fokus bleibt über die globale `:focus-visible`-Regel und die kontrastierten
+  Fokusregeln der Navigationskomponente sichtbar. Die Seite verwendet keine
+  `menu`-/`menuitem`-Rollen.
 
 ## Grenzen und offene Prüfpunkte
 
-- Einzelne `details`-Elemente sind standardmäßig nicht exklusiv. Das `name`-
-  Attribut kann Elemente gruppieren, ist hier aber bewusst nicht eingesetzt;
-  Browserunterstützung und gewünschtes Verhalten müssten vor einer Nutzung
+- Untermenüs verwenden das `name`-Attribut für exklusive Gruppen je Ebene.
+  Browserunterstützung und Verhalten sollten mit den unterstützten Browsern
   geprüft werden.
-- `details` öffnet sich nicht durch Hover. Ein Hover-Verhalten wäre eine
-  zusätzliche Gestaltung und darf die Tastaturbedienung nicht voraussetzen.
+- Desktop-Untermenüs werden zusätzlich bei Hover und Fokus sichtbar; diese
+  Zustände ersetzen nicht die native Tastaturbedienung über `summary`.
 - Verhalten und Ansagen von `details`/`summary` sollten vor produktivem Einsatz
   mit den unterstützten Browsern und Screenreadern getestet werden.
 

@@ -7,6 +7,7 @@
     <title>Beispielseite – Kammeroper Augsburg</title>
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/demo.css">
+    <script src="js/navigation.js" defer></script>
   </head>
   <body>
     <a class="skip-link" href="#inhalt">Zum Inhalt springen</a>
@@ -16,11 +17,18 @@
         <span class="site-brand__location">Augsburg</span>
       </a>
       <nav class="site-nav" aria-label="Hauptnavigation">
-        <ul class="site-nav__links">
+        <button class="site-nav__toggle" type="button" aria-controls="site-nav-panel"
+          aria-expanded="false" popovertarget="site-nav-panel">
+          Menü öffnen
+        </button>
+        <div class="site-nav__panel" id="site-nav-panel" popover="auto">
+          <button class="site-nav__close" type="button" popovertarget="site-nav-panel"
+            popovertargetaction="hide">Menü schließen</button>
+          <ul class="site-nav__links">
           <li><a href="#start">Start</a></li>
           <li class="has-submenu">
             <a href="#programm">Programm</a>
-            <details>
+            <details name="site-nav-level-1">
               <summary aria-label="Untermenü Programm öffnen">Unterseiten</summary>
               <ul>
                 <li><a href="#spielplan">Spielplan</a></li>
@@ -31,7 +39,7 @@
           </li>
           <li class="has-submenu">
             <a href="#ensemble">Ensemble</a>
-            <details>
+            <details name="site-nav-level-1">
               <summary aria-label="Untermenü Ensemble öffnen">Unterseiten</summary>
               <ul>
                 <li><a href="#kuenstler">Künstler:innen</a></li>
@@ -40,7 +48,8 @@
             </details>
           </li>
           <li><a href="#besuch">Ihr Besuch</a></li>
-        </ul>
+          </ul>
+        </div>
       </nav>
     </header>
 

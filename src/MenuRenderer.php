@@ -23,7 +23,14 @@ final class MenuRenderer
         [$itemsMarkup] = $this->renderItems($this->items, $currentPath);
 
         return '<nav class="site-nav" aria-label="' . self::escape($this->label) . '">'
+            . '<button class="site-nav__toggle" type="button" aria-controls="site-nav-panel" '
+            . 'aria-expanded="false" popovertarget="site-nav-panel">'
+            . 'Menü öffnen</button>'
+            . '<div class="site-nav__panel" id="site-nav-panel" popover="auto">'
+            . '<button class="site-nav__close" type="button" popovertarget="site-nav-panel" '
+            . 'popovertargetaction="hide">Menü schließen</button>'
             . '<ul class="site-nav__links">' . $itemsMarkup . '</ul>'
+            . '</div>'
             . '</nav>';
     }
 
@@ -103,7 +110,7 @@ final class MenuRenderer
         }
     }
 
-    private function renderItems(array $items, string $currentPath): array
+    private function renderItems(array $items, string $currentPath, int $depth = 1): array
     {
         $markup = '';
         $containsCurrent = false;
@@ -111,7 +118,11 @@ final class MenuRenderer
         foreach ($items as $item) {
             $itemPath = self::normalizePath($item['url']);
             $isCurrent = !$item['external'] && $itemPath === $currentPath;
-            [$childrenMarkup, $hasCurrentDescendant] = $this->renderItems($item['children'], $currentPath);
+            [$childrenMarkup, $hasCurrentDescendant] = $this->renderItems(
+                $item['children'],
+                $currentPath,
+                $depth + 1,
+            );
             $isAncestor = $hasCurrentDescendant
                 || (!$item['external'] && self::isPathAncestor($itemPath, $currentPath));
             $containsCurrent = $containsCurrent || $isCurrent || $hasCurrentDescendant;
@@ -143,7 +154,7 @@ final class MenuRenderer
             if ($item['children'] !== []) {
                 $details = $hasCurrentDescendant ? ' open' : '';
                 $summaryLabel = 'Untermenü zu ' . $item['title'] . ' ein- oder ausblenden';
-                $markup .= '<details' . $details . '><summary aria-label="'
+                $markup .= '<details' . $details . ' name="site-nav-level-' . $depth . '"><summary aria-label="'
                     . self::escape($summaryLabel) . '"><span aria-hidden="true">⌄</span></summary>'
                     . '<ul class="site-nav__submenu">' . $childrenMarkup . '</ul></details>';
             }
