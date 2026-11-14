@@ -19,9 +19,12 @@ document.querySelectorAll(".site-nav").forEach((navigation) => {
 
   const updatePanelSize = () => {
     if (panel.matches(":popover-open")) {
-      const availableHeight = window.innerHeight - navigation.getBoundingClientRect().bottom;
+      const top = Math.max(0, Math.min(window.innerHeight, navigation.getBoundingClientRect().bottom));
+      const availableHeight = window.innerHeight - top;
+      panel.style.setProperty("--site-nav-panel-top", `${top}px`);
       panel.style.maxBlockSize = `${Math.max(0, availableHeight)}px`;
     } else {
+      panel.style.removeProperty("--site-nav-panel-top");
       panel.style.removeProperty("max-block-size");
     }
   };
@@ -39,6 +42,7 @@ document.querySelectorAll(".site-nav").forEach((navigation) => {
   });
 
   window.addEventListener("resize", updatePanelSize);
+  window.addEventListener("scroll", updatePanelSize, true);
 
   const desktop = window.matchMedia("(min-width: 40.0625rem)");
   desktop.addEventListener("change", () => {
