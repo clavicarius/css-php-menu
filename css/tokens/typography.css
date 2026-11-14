@@ -1,0 +1,32 @@
+@font-face {
+  font-family: "Cormorant Garamond";
+  src: url("../../assets/fonts/cormorant-garamond-variable.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 300 700;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Source Sans 3";
+  src: url("../../assets/fonts/source-sans-3-variable.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 200 900;
+  font-display: swap;
+}
+
+:root {
+  --font-family-heading: "Cormorant Garamond", Georgia, serif;
+  --font-family-body: "Source Sans 3", "Source Sans Pro", Arial, sans-serif;
+
+  --font-size-xs: clamp(0.75rem, 0.72rem + 0.12vw, 0.8125rem);
+  --font-size-sm: clamp(0.875rem, 0.83rem + 0.18vw, 1rem);
+  --font-size-base: clamp(1rem, 0.94rem + 0.24vw, 1.125rem);
+  --font-size-lg: clamp(1.125rem, 1.02rem + 0.42vw, 1.375rem);
+  --font-size-xl: clamp(1.375rem, 1.18rem + 0.78vw, 1.875rem);
+  --font-size-2xl: clamp(1.75rem, 1.42rem + 1.32vw, 2.625rem);
+  --font-size-3xl: clamp(2.125rem, 1.58rem + 2.18vw, 3.5rem);
+
+  --line-height-tight: 1.15;
+  --line-height-heading: 1.25;
+  --line-height-body: 1.6;
+}
