@@ -1,8 +1,8 @@
-# Phase 3: Desktop-CSS für die Hauptnavigation
+# Phase 3 (#9): Desktop-CSS für die Hauptnavigation
 
 **Typ:** Umsetzungsphase
 **Bezug:** Eltern-Issue #2; CSS-Architektur gemäß README und ADRs 0001, 0002 und 0004 beachten
-**Abhängigkeiten:** Phase 1 – HTML-Prototyp; Phase 2 – Renderer
+**Abhängigkeiten:** Phase 1 (#7) – HTML-Prototyp; Phase 2 (#8) – Renderer
 
 ## Ziel
 

@@ -1,12 +1,12 @@
-# Phase 2: PHP-Menümodell und Renderer
+# Phase 2 (#8): PHP-Menümodell und Renderer
 
 **Typ:** Umsetzungsphase
 **Bezug:** Eltern-Issue #2
-**Abhängigkeiten:** Phase 1 – semantische HTML-Struktur
+**Abhängigkeiten:** Phase 1 (#7) – semantische HTML-Struktur
 
 ## Ziel
 
-Hauptmenü zentral in PHP definieren, validieren und anhand eines wiederverwendbaren Renderers als die in Phase 1 festgelegte HTML-Struktur ausgeben.
+Hauptmenü zentral in PHP definieren, validieren und anhand eines wiederverwendbaren Renderers als die in Phase 1 (#7) festgelegte HTML-Struktur ausgeben.
 
 ## Repository-Kontext
 
@@ -29,7 +29,7 @@ Das bestehende Repository stellt ein CSS-Designsystem bereit, enthält aber noch
 - Ungültige Menüdaten werden erkennbar abgewiesen.
 - Abschließende Slashes, Query-Parameter und URL-kodierte Zeichen führen zu korrekter Zuordnung.
 - `/oper` wird nicht mit `/operette` verwechselt.
-- Der Renderer erzeugt die in Phase 1 vereinbarte semantische Struktur und benötigt für grundlegende Navigation kein JavaScript.
+- Der Renderer erzeugt die in Phase 1 (#7) vereinbarte semantische Struktur und benötigt für grundlegende Navigation kein JavaScript.
 - Externe Links und benutzergesteuerte Texte werden sicher ausgegeben.
 - Die Menüdefinition enthält ausschließlich Inhaltsdaten; visuelle Zustände werden über Markup und die Komponentenstile ausgedrückt.
 

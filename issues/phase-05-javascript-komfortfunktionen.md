@@ -1,4 +1,4 @@
-# Phase 5: Progressive JavaScript-Komfortfunktionen
+# Phase 5 (#11): Progressive JavaScript-Komfortfunktionen
 
 **Typ:** Umsetzungsphase
 **Bezug:** Eltern-Issue #2
