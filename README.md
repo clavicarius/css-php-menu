@@ -9,6 +9,14 @@ Zentrale CSS-Tokens und Basiskomponenten für die Website der Kammeroper Augsbur
 <link rel="stylesheet" href="css/main.css">
 ```
 
+## Beispielseite
+
+Die [Beispielseite](index.html) zeigt eine Lorem-ipsum-Website mit Haupt- und
+Servicenavigation. Sie kann lokal über einen beliebigen statischen Webserver
+aufgerufen werden. Bei jedem Push auf `main` veröffentlicht der Workflow
+`.github/workflows/pages.yml` die Seite auf GitHub Pages; alternativ lässt sich
+die Veröffentlichung manuell über `workflow_dispatch` starten.
+
 Komponenten verwenden ausschließlich semantische Variablen aus
 `css/tokens/colors.css`. Neue Farbwerte gehören in die Palette und werden über
 semantische Tokens eingebunden. Gold (`--color-accent`) ist dekorativ; für Text
