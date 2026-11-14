@@ -11,10 +11,12 @@ JavaScript-Abhängigkeiten.
   jeweilige `details`/`summary` ein unabhängiger Schalter daneben.
 - In schmalen Ansichten öffnet der Menüschalter ein natives
   `popover="auto"`-Panel. Die Schließen-Schaltfläche, Escape und ein Klick
-  außerhalb schließen es nativ; `js/navigation.js` schließt es zusätzlich bei
-  Linkauswahl und beim Wechsel zur Desktopbreite. Ein Layout mit PHP-gerenderter
-  Navigation bindet dieses Skript mit `defer` ein, um dieselben Ergänzungen zu
-  erhalten.
+  außerhalb schließen es nativ. Escape schließt mit geladenem
+  `js/navigation.js` zuerst das fokussierte offene Untermenü; ohne offenes
+  Untermenü schließt es das Panel nativ. Das Skript schließt das Panel außerdem
+  bei Linkauswahl und beim Wechsel zur Desktopbreite. Ein Layout mit
+  PHP-gerenderter Navigation bindet dieses Skript mit `defer` ein, um dieselben
+  Ergänzungen zu erhalten.
 - Fehlt die Popover-Unterstützung, bleiben die Links ohne
   Umschalter sichtbar. Untermenüs verwenden exklusive `details`-Gruppen je Ebene,
   damit jeweils nur ein Navigationspfad geöffnet ist.
