@@ -1,7 +1,7 @@
 # Phase 7: Responsive-, Funktions- und Barrierefreiheitsprüfung
 
-**Typ:** Umsetzungsphase  
-**Bezug:** Eltern-Issue #2  
+**Typ:** Umsetzungsphase
+**Bezug:** Eltern-Issue #2
 **Abhängigkeiten:** Phasen 1–6
 
 ## Ziel

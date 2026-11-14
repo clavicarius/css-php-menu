@@ -1,7 +1,7 @@
 # Phase 4: Responsive Mobile-Navigation
 
-**Typ:** Umsetzungsphase  
-**Bezug:** Eltern-Issue #2; CSS-Variablen gemäß Anforderung zu Issue #2 berücksichtigen  
+**Typ:** Umsetzungsphase
+**Bezug:** Eltern-Issue #2; CSS-Variablen gemäß Anforderung zu Issue #2 berücksichtigen
 **Abhängigkeiten:** Phase 1 – HTML-Prototyp; Phase 2 – Renderer; Phase 3 – Desktop-CSS
 
 ## Ziel

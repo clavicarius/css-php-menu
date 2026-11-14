@@ -1,7 +1,7 @@
 # Phase 8: Einbindung in das Website-Layout
 
-**Typ:** Umsetzungsphase  
-**Bezug:** Eltern-Issue #2  
+**Typ:** Umsetzungsphase
+**Bezug:** Eltern-Issue #2
 **Abhängigkeiten:** Phasen 1–7
 
 ## Ziel

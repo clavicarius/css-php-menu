@@ -1,7 +1,7 @@
 # Phase 1: Semantischer HTML-Prototyp der Hauptnavigation
 
-**Typ:** Umsetzungsphase  
-**Bezug:** Eltern-Issue #2  
+**Typ:** Umsetzungsphase
+**Bezug:** Eltern-Issue #2
 **Abhängigkeiten:** Keine
 
 ## Ziel

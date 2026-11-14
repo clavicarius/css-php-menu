@@ -1,7 +1,7 @@
 # Phase 2: PHP-Menümodell und Renderer
 
-**Typ:** Umsetzungsphase  
-**Bezug:** Eltern-Issue #2  
+**Typ:** Umsetzungsphase
+**Bezug:** Eltern-Issue #2
 **Abhängigkeiten:** Phase 1 – semantische HTML-Struktur
 
 ## Ziel

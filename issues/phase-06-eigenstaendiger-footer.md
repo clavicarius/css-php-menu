@@ -1,7 +1,7 @@
 # Phase 6: Eigenständiger Footer
 
-**Typ:** Umsetzungsphase  
-**Bezug:** Eltern-Issue #2; CSS-Variablen gemäß Anforderung zu Issue #2 berücksichtigen  
+**Typ:** Umsetzungsphase
+**Bezug:** Eltern-Issue #2; CSS-Variablen gemäß Anforderung zu Issue #2 berücksichtigen
 **Abhängigkeiten:** Phase 1 – semantische Struktur; Phase 2 – Validierungs-/Renderer-Entscheidungen
 
 ## Ziel
