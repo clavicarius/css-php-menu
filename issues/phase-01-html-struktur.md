@@ -8,6 +8,10 @@
 
 Einen semantischen, zunächst ungestalteten HTML-Prototyp für die Hauptnavigation erstellen und die native Bedienbarkeit der Untermenüs validieren, bevor PHP-Logik oder visuelle Gestaltung ergänzt wird.
 
+## Repository-Kontext
+
+Das Repository enthält inzwischen ein zentrales CSS-Designsystem unter `css/`, aber noch keine PHP-Menükomponenten oder Website-Seiten. Der Prototyp soll deshalb die HTML- und Interaktionsgrundlage definieren, ohne bestehende globale oder komponentenbezogene CSS-Regeln zu duplizieren.
+
 ## Umfang
 
 - Hauptnavigation mit Links und bis zu drei hierarchischen Ebenen abbilden.
@@ -15,6 +19,7 @@ Einen semantischen, zunächst ungestalteten HTML-Prototyp für die Hauptnavigati
 - `details`/`summary` als native Lösung prüfen; Grenzen bei Exklusivität, Hover, Fokus und verschachtelten Untermenüs dokumentieren.
 - Normale Tab-Reihenfolge und sichtbaren Tastaturfokus sicherstellen.
 - Bedienbarkeit ohne JavaScript prüfen.
+- Die bestehende Navigations-CSS in `css/components/navigation.css` als Designsystem-Baseline berücksichtigen; die fertige visuelle Ausgestaltung bleibt Phase 3 und 4 vorbehalten.
 
 ## Akzeptanzkriterien
 

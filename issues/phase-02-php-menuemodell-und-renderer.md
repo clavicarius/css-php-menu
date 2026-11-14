@@ -8,6 +8,10 @@
 
 Hauptmenü zentral in PHP definieren, validieren und anhand eines wiederverwendbaren Renderers als die in Phase 1 festgelegte HTML-Struktur ausgeben.
 
+## Repository-Kontext
+
+Das bestehende Repository stellt ein CSS-Designsystem bereit, enthält aber noch keine PHP-Anwendung, Menü-Konfigurationen oder Website-Seiten. Diese Phase ergänzt die im Eltern-Issue vorgesehenen PHP-Dateien; sie soll keine CSS- oder Design-Token-Definitionen in das Menümodell aufnehmen.
+
 ## Umfang
 
 - `config/main-menu.php` als unabhängige Datenquelle für das Hauptmenü anlegen.
@@ -17,6 +21,7 @@ Hauptmenü zentral in PHP definieren, validieren und anhand eines wiederverwendb
 - Externe Links ausschließlich anhand von `external` behandeln; `target="_blank"`, `rel="noopener noreferrer"`, Symbol und Screenreader-Hinweis ausgeben.
 - HTML-Attribute und Text kontextgerecht maskieren.
 - Aktuelle Seite mit `aria-current="page"` und Vorfahren mit einem dezenten Zustand kennzeichnen.
+- Die Daten- und Renderer-Struktur so halten, dass der Footer später einen getrennten Menüdatenbestand nutzen kann, ohne eine gemeinsame inhaltliche Datenquelle zu schaffen.
 
 ## Akzeptanzkriterien
 
@@ -26,6 +31,7 @@ Hauptmenü zentral in PHP definieren, validieren und anhand eines wiederverwendb
 - `/oper` wird nicht mit `/operette` verwechselt.
 - Der Renderer erzeugt die in Phase 1 vereinbarte semantische Struktur und benötigt für grundlegende Navigation kein JavaScript.
 - Externe Links und benutzergesteuerte Texte werden sicher ausgegeben.
+- Die Menüdefinition enthält ausschließlich Inhaltsdaten; visuelle Zustände werden über Markup und die Komponentenstile ausgedrückt.
 
 ## Nicht-Ziele
 
