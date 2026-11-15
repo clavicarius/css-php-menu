@@ -8,8 +8,8 @@ body {
 }
 
 main {
-  background-color: var(--color-surface);
-  color: var(--color-text);
+  background-color: transparent;
+  color: var(--color-text-inverse);
 }
 
 main,
@@ -19,7 +19,7 @@ main,
 }
 
 main a {
-  color: var(--color-primary);
+  color: var(--color-text-inverse);
 }
 
 a {

@@ -104,6 +104,10 @@
   margin-block-end: var(--space-2);
 }
 
+.content-section .eyebrow {
+  color: var(--palette-accent-300);
+}
+
 .feature-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -114,6 +118,7 @@
   padding: var(--space-5);
   border-top: 3px solid var(--color-accent-strong);
   background-color: var(--color-secondary);
+  color: var(--color-text);
 }
 
 .feature-card__number {
@@ -129,6 +134,7 @@
 .feature-card a {
   display: inline-block;
   margin-block-start: var(--space-2);
+  color: var(--color-primary);
   font-weight: 700;
 }
 
