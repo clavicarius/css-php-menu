@@ -139,6 +139,10 @@
   text-decoration: none;
 }
 
+.site-nav__links details > ul > li > details > summary {
+  justify-content: space-between;
+}
+
 .site-nav__links a:hover,
 .site-nav__links summary:hover,
 .site-nav__links details[open] > summary,
