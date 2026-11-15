@@ -179,19 +179,20 @@
     gap: var(--space-1);
   }
 
-  .site-nav__links > li:nth-last-child(-n + 2):not(:first-child) > details > ul {
+  .site-nav__links > li:nth-last-child(-n + 2):not(:first-child) > details[name="site-nav-level-1"] > ul {
     inset-inline-start: auto;
     inset-inline-end: 0;
   }
 
   .site-nav__links details > ul > li > details > ul {
+    position: absolute;
     inset-block-start: 0;
     inset-inline-start: 100%;
     margin-block-start: 0;
     margin-inline-start: 0;
   }
 
-  .site-nav__links > li:nth-last-child(-n + 2):not(:first-child) > details > ul > li > details > ul {
+  .site-nav__links > li:nth-last-child(-n + 2):not(:first-child) > details[name="site-nav-level-1"] > ul > li > details > ul {
     inset-inline-start: auto;
     inset-inline-end: 100%;
   }
