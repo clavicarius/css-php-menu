@@ -9,10 +9,13 @@ JavaScript-Abhängigkeiten.
 
 - Jeder Eintrag ist ein normaler Link. Bei Einträgen mit Kindern ist das
   jeweilige `details`/`summary` ein unabhängiger Schalter daneben.
-- In schmalen Ansichten öffnet der Menüschalter ein natives
+- Bis einschließlich `44rem` öffnet der Menüschalter ein natives
   `popover="auto"`-Panel. Die Schließen-Schaltfläche, Escape und ein Klick
   außerhalb schließen es nativ; `js/navigation.js` schließt es zusätzlich bei
-  Linkauswahl und beim Wechsel zur Desktopbreite. Ein Layout mit PHP-gerenderter
+  Linkauswahl.
+- Oberhalb von `44rem` entfernt `js/navigation.js` das `popover`-Attribut, damit
+  das Menü im Headerfluss bleibt und Untermenüs nicht durch ein scrollendes
+  Popover-Panel abgeschnitten werden. Ein Layout mit PHP-gerenderter
   Navigation bindet dieses Skript mit `defer` ein, um dieselben Ergänzungen zu
   erhalten.
 - Fehlt die Popover-Unterstützung, bleiben die Links ohne

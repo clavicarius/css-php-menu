@@ -155,7 +155,7 @@ final class MenuRenderer
                 $details = $hasCurrentDescendant ? ' open' : '';
                 $summaryLabel = 'Untermenü zu ' . $item['title'] . ' ein- oder ausblenden';
                 $markup .= '<details' . $details . ' name="site-nav-level-' . $depth . '"><summary aria-label="'
-                    . self::escape($summaryLabel) . '"><span aria-hidden="true">⌄</span></summary>'
+                    . self::escape($summaryLabel) . '"></summary>'
                     . '<ul class="site-nav__submenu">' . $childrenMarkup . '</ul></details>';
             }
             $markup .= '</li>';

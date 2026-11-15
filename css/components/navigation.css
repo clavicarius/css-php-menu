@@ -161,7 +161,7 @@
   transform: rotate(225deg);
 }
 
-@media (min-width: 40.0625rem) {
+@media (width > 44rem) {
   .site-nav__links details > ul {
     position: absolute;
     inset-block-start: 100%;
@@ -217,7 +217,7 @@
 }
 
 @supports selector(:popover-open) {
-  @media (max-width: 40rem) {
+  @media (width <= 44rem) {
       .site-nav {
         justify-content: flex-end;
       }

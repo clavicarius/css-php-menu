@@ -2,11 +2,27 @@ document.querySelectorAll(".site-nav").forEach((navigation) => {
   const toggle = navigation.querySelector(".site-nav__toggle");
   const panel = navigation.querySelector(".site-nav__panel");
 
-  if (!toggle || !panel || typeof panel.hidePopover !== "function") {
+  if (!toggle || !panel) {
     return;
   }
 
+  const supportsPopover = typeof panel.hidePopover === "function";
+  const desktop = window.matchMedia("(width > 44rem)");
   let lastFocused;
+
+  if (desktop.matches || !supportsPopover) {
+    if (supportsPopover && panel.matches(":popover-open")) {
+      panel.hidePopover();
+    }
+    panel.removeAttribute("popover");
+  } else {
+    panel.setAttribute("popover", "auto");
+  }
+
+  if (!supportsPopover) {
+    return;
+  }
+
   navigation.addEventListener("focusin", (event) => {
     lastFocused = event.target;
   });
@@ -40,23 +56,27 @@ document.querySelectorAll(".site-nav").forEach((navigation) => {
 
   window.addEventListener("resize", updatePanelSize);
 
-  const desktop = window.matchMedia("(min-width: 40.0625rem)");
   desktop.addEventListener("change", () => {
     if (desktop.matches && panel.matches(":popover-open")) {
       const restoreNavigationFocus = document.activeElement === toggle || lastFocused === toggle;
       panel.hidePopover();
+      panel.removeAttribute("popover");
       if (restoreNavigationFocus) {
         window.requestAnimationFrame(() => panel.querySelector("a, summary")?.focus({ preventScroll: true }));
       }
-    } else if (
-      !desktop.matches
-      && !panel.matches(":popover-open")
-      && (
-        panel.contains(document.activeElement)
-        || (document.activeElement === document.body && panel.contains(lastFocused))
-      )
-    ) {
-      toggle.focus({ preventScroll: true });
+    } else if (desktop.matches) {
+      panel.removeAttribute("popover");
+    } else {
+      panel.setAttribute("popover", "auto");
+      if (
+        !panel.matches(":popover-open")
+        && (
+          panel.contains(document.activeElement)
+          || (document.activeElement === document.body && panel.contains(lastFocused))
+        )
+      ) {
+        toggle.focus({ preventScroll: true });
+      }
     }
   });
 });

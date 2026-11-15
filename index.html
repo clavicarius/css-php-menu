@@ -29,9 +29,18 @@
           <li class="has-submenu">
             <a href="#programm">Programm</a>
             <details name="site-nav-level-1">
-              <summary aria-label="Untermenü Programm öffnen">Unterseiten</summary>
+              <summary aria-label="Untermenü Programm öffnen"></summary>
               <ul>
-                <li><a href="#spielplan">Spielplan</a></li>
+                <li class="has-submenu">
+                  <a href="#spielplan">Spielplan</a>
+                  <details name="site-nav-level-2">
+                    <summary aria-label="Untermenü Spielplan öffnen"></summary>
+                    <ul class="site-nav__submenu--reverse">
+                      <li><a href="#spielplan">Aktuelle Vorstellungen</a></li>
+                      <li><a href="#konzerte">Konzerte &amp; Begegnungen</a></li>
+                    </ul>
+                  </details>
+                </li>
                 <li><a href="#konzerte">Konzerte</a></li>
                 <li><a href="#vermittlung">Musikvermittlung</a></li>
               </ul>
@@ -40,7 +49,7 @@
           <li class="has-submenu">
             <a href="#ensemble">Ensemble</a>
             <details name="site-nav-level-1">
-              <summary aria-label="Untermenü Ensemble öffnen">Unterseiten</summary>
+              <summary aria-label="Untermenü Ensemble öffnen"></summary>
               <ul>
                 <li><a href="#kuenstler">Künstler:innen</a></li>
                 <li><a href="#geschichte">Geschichte</a></li>
