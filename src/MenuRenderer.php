@@ -134,30 +134,40 @@ final class MenuRenderer
             if ($isAncestor) {
                 $classes[] = 'is-ancestor';
             }
-
-            $linkAttributes = ' href="' . self::escape($item['url']) . '"';
-            if ($isCurrent) {
-                $linkAttributes .= ' aria-current="page"';
-            }
-            if ($item['external']) {
-                $linkAttributes .= ' target="_blank" rel="noopener noreferrer" aria-label="'
-                    . self::escape($item['title'] . ' (öffnet in neuem Tab)') . '"';
+            if ($item['children'] !== []) {
+                $classes[] = 'has-submenu';
             }
 
-            $link = '<a' . $linkAttributes . '>' . self::escape($item['title']);
-            if ($item['external']) {
-                $link .= ' <span aria-hidden="true">↗</span>';
-            }
-            $link .= '</a>';
+            $markup .= '<li class="' . self::escape(implode(' ', $classes)) . '">';
 
-            $markup .= '<li class="' . self::escape(implode(' ', $classes)) . '">' . $link;
+            // Items with children: render as details/summary toggle only
             if ($item['children'] !== []) {
                 $details = $hasCurrentDescendant ? ' open' : '';
-                $summaryLabel = 'Untermenü zu ' . $item['title'] . ' ein- oder ausblenden';
-                $markup .= '<details' . $details . ' name="site-nav-level-' . $depth . '"><summary aria-label="'
-                    . self::escape($summaryLabel) . '"></summary>'
+                $summaryLabel = $item['title'];
+                $markup .= '<details' . $details . ' name="site-nav-level-' . $depth . '">'
+                    . '<summary aria-label="' . self::escape($summaryLabel) . '">'
+                    . self::escape($item['title'])
+                    . '</summary>'
                     . '<ul class="site-nav__submenu">' . $childrenMarkup . '</ul></details>';
+            } else {
+                // Items without children: render as regular link
+                $linkAttributes = ' href="' . self::escape($item['url']) . '"';
+                if ($isCurrent) {
+                    $linkAttributes .= ' aria-current="page"';
+                }
+                if ($item['external']) {
+                    $linkAttributes .= ' target="_blank" rel="noopener noreferrer" aria-label="'
+                        . self::escape($item['title'] . ' (öffnet in neuem Tab)') . '"';
+                }
+
+                $link = '<a' . $linkAttributes . '>' . self::escape($item['title']);
+                if ($item['external']) {
+                    $link .= ' <span aria-hidden="true">↗</span>';
+                }
+                $link .= '</a>';
+                $markup .= $link;
             }
+
             $markup .= '</li>';
         }
 
