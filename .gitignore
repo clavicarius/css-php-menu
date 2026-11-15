@@ -2,6 +2,10 @@
 /node_modules/
 /vendor/*
 
+# Test artifacts
+*-test.png
+*-nested-menu.png
+
 # CakePHP 3
 
 /config/app.php
