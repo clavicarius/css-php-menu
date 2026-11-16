@@ -5,6 +5,8 @@
 # Test artifacts
 *-test.png
 *-nested-menu.png
+test/edge-headless-profile/
+test/**/*.log
 
 # CakePHP 3
 
