@@ -19,6 +19,30 @@ document.querySelectorAll(".site-nav").forEach((navigation) => {
     panel.setAttribute("popover", "auto");
   }
 
+  const focusPanel = () => {
+    const hadTabIndex = panel.hasAttribute("tabindex");
+    if (!hadTabIndex) {
+      panel.setAttribute("tabindex", "-1");
+    }
+    panel.focus({ preventScroll: true });
+    if (!hadTabIndex) {
+      panel.removeAttribute("tabindex");
+    }
+  };
+
+  desktop.addEventListener("change", () => {
+    if (!desktop.matches) {
+      return;
+    }
+
+    if (panel.querySelector(".site-nav__links")?.contains(document.activeElement)) {
+      focusPanel();
+    }
+    panel.querySelectorAll(".site-nav__links details[open]").forEach((details) => {
+      details.open = false;
+    });
+  });
+
   if (!supportsPopover) {
     return;
   }
@@ -67,11 +91,13 @@ document.querySelectorAll(".site-nav").forEach((navigation) => {
 
   desktop.addEventListener("change", () => {
     if (desktop.matches && panel.matches(":popover-open")) {
-      const restoreNavigationFocus = document.activeElement === toggle || lastFocused === toggle;
+      const restoreNavigationFocus = document.activeElement === toggle
+        || panel.contains(document.activeElement)
+        || lastFocused === toggle;
       panel.hidePopover();
       panel.removeAttribute("popover");
       if (restoreNavigationFocus) {
-        window.requestAnimationFrame(() => panel.querySelector("a, summary")?.focus({ preventScroll: true }));
+        window.requestAnimationFrame(focusPanel);
       }
     } else if (desktop.matches) {
       panel.removeAttribute("popover");

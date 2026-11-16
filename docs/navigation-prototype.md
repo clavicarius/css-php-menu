@@ -14,7 +14,8 @@ JavaScript-Abhängigkeiten.
   außerhalb schließen es nativ. Escape schließt mit geladenem
   `js/navigation.js` zuerst das fokussierte offene Untermenü; ohne offenes
   Untermenü schließt es das Panel nativ. Das Skript schließt das Panel außerdem
-  bei Linkauswahl und beim Wechsel zur Desktopbreite. Ein Layout mit
+  bei Linkauswahl und beim Wechsel zur Desktopbreite. Beim Wechsel zur
+  Desktopbreite werden auch alle geöffneten Untermenüs eingeklappt. Ein Layout mit
   PHP-gerenderter Navigation bindet dieses Skript mit `defer` ein, um dieselben
   Ergänzungen zu erhalten.
 - Fehlt die Popover-Unterstützung, bleiben die Links ohne
@@ -51,3 +52,6 @@ Mit aktiviertem JavaScript in schmaler Ansicht zusätzlich das geöffnete Menü
 und die Linkauswahl prüfen:
 Das Panel überlagert den Inhalt und schließt bei der Auswahl eines Links.
 Position und Scrollbarkeit auch nach Scrollen und Größenänderung prüfen.
+Beim Wechsel von der mobilen zur Desktopbreite prüfen, dass geöffnete
+Untermenüs aller Ebenen geschlossen werden und anschließend per Hover oder
+Tastatur wieder erreichbar sind.
