@@ -130,8 +130,14 @@
 
 .site-nav__links details > ul > li {
   display: flex;
-  align-items: center;
+  align-items: stretch;
   gap: var(--space-1);
+}
+
+.site-nav__links details > ul > li > details {
+  flex: 1 1 auto;
+  min-inline-size: 0;
+  inline-size: 100%;
 }
 
 .site-nav__links details > ul a,
@@ -139,6 +145,11 @@
 .site-nav__links details > ul li > details > summary {
   flex: 1;
   text-decoration: none;
+}
+
+.site-nav__links details > ul > li > details > summary {
+  inline-size: 100%;
+  justify-content: space-between;
 }
 
 .site-nav__links a:hover,
@@ -176,9 +187,17 @@
 
   .site-nav__links details[open] > ul,
   .site-nav__links details:hover > ul,
-  .site-nav__links details:focus-within > ul {
+  .site-nav__links details:focus-within > ul,
+  .site-nav__links li:hover > details > ul,
+  .site-nav__links li:focus-within > details > ul {
     display: grid;
     gap: var(--space-1);
+  }
+
+  .site-nav__links details > ul > li:hover,
+  .site-nav__links details > ul > li:focus-within,
+  .site-nav__links details > ul > li:has(details[open]) {
+    z-index: 4;
   }
 
   .site-nav__links > li:nth-last-child(-n + 2):not(:first-child) > details[name="site-nav-level-1"] > ul {
@@ -190,14 +209,13 @@
     position: absolute;
     inset-block-start: 0;
     inset-inline-start: 100%;
+    z-index: 3;
     margin-block-start: 0;
-    margin-inline-start: -0.5rem;
   }
 
   .site-nav__links > li:nth-last-child(-n + 2):not(:first-child) > details[name="site-nav-level-1"] > ul > li > details > ul {
     inset-inline-start: auto;
     inset-inline-end: 100%;
-    margin-inline-end: -0.5rem;
   }
 
   .site-nav__links > li > details > .site-nav__submenu--reverse {
@@ -214,7 +232,9 @@
 
   @supports selector(details::details-content) {
     .site-nav__links details:hover::details-content,
-    .site-nav__links details:focus-within::details-content {
+    .site-nav__links details:focus-within::details-content,
+    .site-nav__links li:hover > details::details-content,
+    .site-nav__links li:focus-within > details::details-content {
       content-visibility: visible;
     }
   }
