@@ -150,10 +150,6 @@
   text-underline-offset: 0.25em;
 }
 
-.site-nav__links > li > details:is([open], :hover, :focus-within) > summary::after {
-  transform: rotate(225deg);
-}
-
 @media (width > 44rem) {
   .site-nav__links details > ul {
     position: absolute;
@@ -200,6 +196,12 @@
     .site-nav__links li:is(:hover, :focus-within) > details::details-content {
       content-visibility: visible;
     }
+  }
+}
+
+@media (width <= 44rem) {
+  .site-nav__links > li > details[open] > summary::after {
+    transform: rotate(225deg);
   }
 }
 
