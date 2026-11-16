@@ -134,7 +134,8 @@
 }
 
 .site-nav__links details > ul a,
-.site-nav__links details > ul summary {
+.site-nav__links details > ul summary,
+.site-nav__links details > ul li > details > summary {
   flex: 1;
   text-decoration: none;
 }
