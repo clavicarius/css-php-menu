@@ -13,7 +13,9 @@ Bewegungssensibilität sind Teil der zugänglichen Umsetzung.
 
 Wiederverwendbare Stile werden in `css/components/` nach Komponente organisiert.
 Komponenten konsumieren semantische Farben, Typografie-, Abstands- und
-Effekt-Tokens; sie führen keine konkurrierenden Farbpaletten ein.
+Effekt-Tokens; sie führen keine konkurrierenden Farbpaletten ein. Navigation
+und Footer definieren passende Fallbackwerte, damit `css/menu.css` unabhängig
+vom übrigen Designsystem eingebunden werden kann.
 
 Fokus ist über `:focus-visible` sichtbar. Bewegungsreduktion wird mit
 `prefers-reduced-motion` berücksichtigt. Interaktive Ziele sollen ausreichend

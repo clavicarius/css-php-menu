@@ -2,18 +2,16 @@
 
 Der HTML-Prototyp liegt unter [`prototypes/navigation.html`](../prototypes/navigation.html).
 Er verwendet die vorhandenen Navigationsklassen und `css/main.css` als Designsystem-
-Baseline. Das optionale Skript erweitert die nativen Popover-Aktionen ohne externe
+Baseline. Das Skript ergänzt die nativen Popover-Aktionen ohne externe
 JavaScript-Abhängigkeiten.
 
 ## Native Interaktion und Fokus
 
-- Jeder Eintrag ist ein normaler Link. Bei Einträgen mit Kindern ist das
-  jeweilige `details`/`summary` ein unabhängiger Schalter daneben.
+- Einträge mit Kindern sind `details`/`summary`-Schalter; Einträge ohne Kinder
+  sind normale Links.
 - Bis einschließlich `44rem` öffnet der Menüschalter ein natives
   `popover="auto"`-Panel. Die Schließen-Schaltfläche, Escape und ein Klick
-  außerhalb schließen es nativ. Escape schließt mit geladenem
-  `js/navigation.js` zuerst das fokussierte offene Untermenü; ohne offenes
-  Untermenü schließt es das Panel nativ. Das Skript schließt das Panel außerdem
+  außerhalb schließen es nativ. Das Skript schließt das Panel außerdem
   bei Linkauswahl und beim Wechsel zur Desktopbreite. Beim Wechsel zur
   Desktopbreite werden auch alle geöffneten Untermenüs eingeklappt. Ein Layout mit
   PHP-gerenderter Navigation bindet dieses Skript mit `defer` ein, um dieselben
