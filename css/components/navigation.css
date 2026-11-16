@@ -70,6 +70,7 @@
 .site-nav__links summary {
   list-style: none;
   cursor: pointer;
+  justify-content: space-between;
 }
 
 .site-nav__links summary::-webkit-details-marker {
@@ -138,10 +139,6 @@
 .site-nav__links details > ul li > details > summary {
   flex: 1;
   text-decoration: none;
-}
-
-.site-nav__links details > ul > li > details > summary {
-  justify-content: space-between;
 }
 
 .site-nav__links a:hover,
