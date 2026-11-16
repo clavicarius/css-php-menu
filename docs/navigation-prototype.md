@@ -9,7 +9,7 @@ JavaScript-Abhängigkeiten.
 
 - Jeder Eintrag ist ein normaler Link. Bei Einträgen mit Kindern ist das
   jeweilige `details`/`summary` ein unabhängiger Schalter daneben.
-- In schmalen Ansichten öffnet der Menüschalter ein natives
+- Bis einschließlich `44rem` öffnet der Menüschalter ein natives
   `popover="auto"`-Panel. Die Schließen-Schaltfläche, Escape und ein Klick
   außerhalb schließen es nativ. Escape schließt mit geladenem
   `js/navigation.js` zuerst das fokussierte offene Untermenü; ohne offenes

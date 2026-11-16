@@ -70,6 +70,7 @@
 .site-nav__links summary {
   list-style: none;
   cursor: pointer;
+  justify-content: space-between;
 }
 
 .site-nav__links summary::-webkit-details-marker {
@@ -134,7 +135,8 @@
 }
 
 .site-nav__links details > ul a,
-.site-nav__links details > ul summary {
+.site-nav__links details > ul summary,
+.site-nav__links details > ul li > details > summary {
   flex: 1;
   text-decoration: none;
 }
@@ -161,7 +163,7 @@
   transform: rotate(225deg);
 }
 
-@media (min-width: 40.0625rem) {
+@media (width > 44rem) {
   .site-nav__links details > ul {
     position: absolute;
     inset-block-start: 100%;
@@ -179,21 +181,23 @@
     gap: var(--space-1);
   }
 
-  .site-nav__links > li:nth-last-child(-n + 2):not(:first-child) > details > ul {
+  .site-nav__links > li:nth-last-child(-n + 2):not(:first-child) > details[name="site-nav-level-1"] > ul {
     inset-inline-start: auto;
     inset-inline-end: 0;
   }
 
   .site-nav__links details > ul > li > details > ul {
+    position: absolute;
     inset-block-start: 0;
     inset-inline-start: 100%;
     margin-block-start: 0;
-    margin-inline-start: 0;
+    margin-inline-start: -0.5rem;
   }
 
-  .site-nav__links > li:nth-last-child(-n + 2):not(:first-child) > details > ul > li > details > ul {
+  .site-nav__links > li:nth-last-child(-n + 2):not(:first-child) > details[name="site-nav-level-1"] > ul > li > details > ul {
     inset-inline-start: auto;
     inset-inline-end: 100%;
+    margin-inline-end: -0.5rem;
   }
 
   .site-nav__links > li > details > .site-nav__submenu--reverse {
@@ -217,7 +221,7 @@
 }
 
 @supports selector(:popover-open) {
-  @media (max-width: 40rem) {
+  @media (width <= 44rem) {
       .site-nav {
         justify-content: flex-end;
       }

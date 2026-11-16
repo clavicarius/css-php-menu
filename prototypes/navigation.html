@@ -21,45 +21,49 @@
         <button class="site-nav__close" type="button" popovertarget="site-nav-panel"
           popovertargetaction="hide">Menü schließen</button>
         <ul class="site-nav__links">
-          <li>
-            <a href="/spielplan/">Spielplan</a>
+          <li><a href="/start/">Start</a></li>
+          <li class="has-submenu">
             <details name="site-nav-level-1">
-              <summary>Untermenü von Spielplan</summary>
-              <ul>
-                <li>
-                  <a href="/spielplan/2026-27/">Spielzeit 2026/27</a>
+              <summary aria-label="Programm">Programm</summary>
+              <ul class="site-nav__submenu">
+                <li class="has-submenu">
                   <details name="site-nav-level-2">
-                    <summary>Untermenü von Spielzeit 2026/27</summary>
-                    <ul>
+                    <summary aria-label="Spielplan">Spielplan</summary>
+                    <ul class="site-nav__submenu">
+                      <li><a href="/spielplan/2026-27/">Spielzeit 2026/27</a></li>
                       <li><a href="/spielplan/2026-27/oper/">Oper</a></li>
                       <li><a href="/spielplan/2026-27/konzerte/">Konzerte</a></li>
                     </ul>
                   </details>
                 </li>
-                <li><a href="/spielplan/rueckblick/">Rückblick</a></li>
+                <li><a href="/konzerte/">Konzerte</a></li>
+                <li><a href="/vermittlung/">Musikvermittlung</a></li>
               </ul>
             </details>
           </li>
-          <li>
-            <a href="/besuch/">Ihr Besuch</a>
+          <li class="has-submenu">
             <details name="site-nav-level-1">
-              <summary>Untermenü von Ihr Besuch</summary>
-              <ul>
-                <li><a href="/besuch/anfahrt/">Anfahrt</a></li>
-                <li><a href="/besuch/barrierefreiheit/">Barrierefreiheit</a></li>
+              <summary aria-label="Ensemble">Ensemble</summary>
+              <ul class="site-nav__submenu">
+                <li><a href="/ensemble/kuenstler/">Künstler:innen</a></li>
+                <li><a href="/ensemble/geschichte/">Geschichte</a></li>
               </ul>
             </details>
           </li>
-          <li><a href="/ensemble/">Ensemble</a></li>
+          <li><a href="/besuch/">Ihr Besuch</a></li>
         </ul>
       </div>
     </nav>
 
     <main>
       <p>
-        Die Links navigieren unabhängig von den nativen Untermenü-Schaltern.
+        Elemente mit Untermenüs sind reine Toggle-Schalter (Details-Elemente).
+        Nur Blattelemente sind Links. Dies vermeidet redundante Klickziele und macht die
+        Navigation intuitiver.
+      </p>
+      <p>
         Öffne ein Untermenü mit Enter oder Leertaste und erreiche seine Links
-        anschließend mit Tab.
+        anschließend mit Tab. Auf Mobilgeräten nutzt die Navigation die native Popover API.
       </p>
     </main>
   </body>

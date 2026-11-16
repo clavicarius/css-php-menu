@@ -27,21 +27,27 @@
           <ul class="site-nav__links">
           <li><a href="#start">Start</a></li>
           <li class="has-submenu">
-            <a href="#programm">Programm</a>
             <details name="site-nav-level-1">
-              <summary aria-label="Untermenü Programm öffnen">Unterseiten</summary>
-              <ul>
-                <li><a href="#spielplan">Spielplan</a></li>
+              <summary aria-label="Programm">Programm</summary>
+              <ul class="site-nav__submenu">
+                <li class="has-submenu">
+                  <details name="site-nav-level-2">
+                    <summary aria-label="Spielplan">Spielplan</summary>
+                    <ul class="site-nav__submenu">
+                      <li><a href="#spielplan">Aktuelle Vorstellungen</a></li>
+                      <li><a href="#konzerte">Konzerte &amp; Begegnungen</a></li>
+                    </ul>
+                  </details>
+                </li>
                 <li><a href="#konzerte">Konzerte</a></li>
                 <li><a href="#vermittlung">Musikvermittlung</a></li>
               </ul>
             </details>
           </li>
           <li class="has-submenu">
-            <a href="#ensemble">Ensemble</a>
             <details name="site-nav-level-1">
-              <summary aria-label="Untermenü Ensemble öffnen">Unterseiten</summary>
-              <ul>
+              <summary aria-label="Ensemble">Ensemble</summary>
+              <ul class="site-nav__submenu">
                 <li><a href="#kuenstler">Künstler:innen</a></li>
                 <li><a href="#geschichte">Geschichte</a></li>
               </ul>

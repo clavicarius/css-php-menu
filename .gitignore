@@ -1,6 +1,15 @@
+# Dependencies
+/node_modules/
+/vendor/*
+
+# Test artifacts
+*-test.png
+*-nested-menu.png
+test/edge-headless-profile/
+test/**/*.log
+
 # CakePHP 3
 
-/vendor/*
 /config/app.php
 
 /tmp/cache/models/*

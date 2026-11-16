@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Hover-Breite Test – Ebene 2 vs. Links</title>
+  <link rel="stylesheet" href="../css/main.css">
+  <script src="../js/navigation.js" defer></script>
+  <style>
+    body {
+      max-width: 80rem;
+      margin: 3rem auto;
+      padding: 0 1.5rem;
+    }
+    h1 {
+      margin-bottom: 1rem;
+      font-size: 1.5rem;
+    }
+    .test-section {
+      margin-bottom: 3rem;
+      padding: 1.5rem;
+      background: #f5f0e6;
+      border-radius: 0.5rem;
+    }
+    .instructions {
+      margin-bottom: 1rem;
+      padding: 1rem;
+      background: #fff;
+      border-left: 4px solid #641f32;
+    }
+    .instructions strong {
+      display: block;
+      margin-bottom: 0.5rem;
+      color: #641f32;
+    }
+    nav {
+      max-width: 20rem;
+    }
+  </style>
+</head>
+<body>
+  <h1>Hover-Breite Test für verschachtelte Menü-Elemente</h1>
+  
+  <div class="test-section">
+    <div class="instructions">
+      <strong>Test 1: Hover-Bereich Vergleich</strong>
+      <p>
+        Öffne das Menü (Programm → Spielplan) und versuche über den verschiedenen Elementen zu hovern:
+      </p>
+      <ul>
+        <li><strong>„Spielplan"</strong> (Summary/Toggle mit Untermenü) – sollte jetzt die volle Breite haben</li>
+        <li><strong>„Konzerte"</strong> (Link) – hat bereits die volle Breite</li>
+        <li><strong>Drittes Ebene-Menü</strong> – sollte jetzt ansteubar sein, wenn der Hover-Bereich größer ist</li>
+      </ul>
+    </div>
+
+    <nav class="site-nav" aria-label="Hauptnavigation">
+      <button class="site-nav__toggle" type="button" aria-controls="site-nav-panel"
+        aria-expanded="false" popovertarget="site-nav-panel">
+        Menü öffnen
+      </button>
+      <div class="site-nav__panel" id="site-nav-panel" popover="auto">
+        <button class="site-nav__close" type="button" popovertarget="site-nav-panel"
+          popovertargetaction="hide">Menü schließen</button>
+        <ul class="site-nav__links">
+          <li><a href="#start">Start</a></li>
+          <li class="has-submenu">
+            <details name="site-nav-level-1" open>
+              <summary aria-label="Programm">Programm</summary>
+              <ul class="site-nav__submenu">
+                <li class="has-submenu">
+                  <details name="site-nav-level-2" open>
+                    <summary aria-label="Spielplan">Spielplan</summary>
+                    <ul class="site-nav__submenu">
+                      <li><a href="#spielplan">Aktuelle Vorstellungen</a></li>
+                      <li><a href="#konzerte">Konzerte &amp; Begegnungen</a></li>
+                    </ul>
+                  </details>
+                </li>
+                <li><a href="#konzerte">Konzerte</a></li>
+                <li><a href="#vermittlung">Musikvermittlung</a></li>
+              </ul>
+            </details>
+          </li>
+          <li class="has-submenu">
+            <details name="site-nav-level-1">
+              <summary aria-label="Ensemble">Ensemble</summary>
+              <ul class="site-nav__submenu">
+                <li><a href="#kuenstler">Künstler:innen</a></li>
+                <li><a href="#geschichte">Geschichte</a></li>
+              </ul>
+            </details>
+          </li>
+          <li><a href="#besuch">Ihr Besuch</a></li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+
+  <div class="test-section">
+    <div class="instructions">
+      <strong>Erwartetes Verhalten (nach Fix):</strong>
+      <ul>
+        <li>„Spielplan" hat jetzt die gleiche Hover-Breite wie „Konzerte"</li>
+        <li>Der Pfeil steht rechts und ist Teil des ganzen anklickbaren Bereichs</li>
+        <li>Das drittes Ebene-Menü bleibt sichtbar und ansteubar, wenn man die Maus bewegt</li>
+        <li>Hover-Bridge funktioniert (negativer Margin verhindert Hover-Verlust)</li>
+      </ul>
+    </div>
+  </div>
+
+  <main style="margin-top: 3rem;">
+    <p>Diese Test-Seite überprüft, ob die CSS-Änderung (flex: 1 auf nested summary) funktioniert.</p>
+  </main>
+</body>
+</html>
