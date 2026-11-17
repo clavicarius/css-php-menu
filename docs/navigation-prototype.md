@@ -36,6 +36,9 @@ JavaScript-Abhängigkeiten.
   geprüft werden.
 - Desktop-Untermenüs werden zusätzlich bei Hover und Fokus sichtbar; diese
   Zustände ersetzen nicht die native Tastaturbedienung über `summary`.
+- Das Skript richtet Desktop-Untermenüs nach dem verfügbaren Platz im Viewport
+  aus und verschiebt sie bei Bedarf, damit sie an beiden Bildschirmrändern
+  sichtbar bleiben.
 - Verhalten und Ansagen von `details`/`summary` sollten vor produktivem Einsatz
   mit den unterstützten Browsern und Screenreadern getestet werden.
 
@@ -53,3 +56,5 @@ Position und Scrollbarkeit auch nach Scrollen und Größenänderung prüfen.
 Beim Wechsel von der mobilen zur Desktopbreite prüfen, dass geöffnete
 Untermenüs aller Ebenen geschlossen werden und anschließend per Hover oder
 Tastatur wieder erreichbar sind.
+`test/navigation-viewport.html` prüft die Untermenü-Ausrichtung am linken und
+rechten Rand bei einer Desktopbreite über `44rem`.

@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Untermenüs im Viewport</title>
+  <link rel="stylesheet" href="../css/menu.css">
+  <script src="../js/navigation.js" defer></script>
+  <style>
+    .site-nav {
+      position: fixed;
+      top: 4rem;
+      width: max-content;
+    }
+  </style>
+</head>
+<body>
+  <p id="result">Test läuft …</p>
+  <nav class="site-nav" aria-label="Testnavigation">
+    <button class="site-nav__toggle" type="button" aria-controls="site-nav-panel"
+      aria-expanded="false" popovertarget="site-nav-panel">Menü öffnen</button>
+    <div class="site-nav__panel" id="site-nav-panel" popover="auto">
+      <button class="site-nav__close" type="button" popovertarget="site-nav-panel"
+        popovertargetaction="hide">Menü schließen</button>
+      <ul class="site-nav__links">
+        <li><a href="#start">Start</a></li>
+        <li>
+          <details name="site-nav-level-1" open>
+            <summary>Programm</summary>
+            <ul class="site-nav__submenu">
+              <li>
+                <details name="site-nav-level-2" open>
+                  <summary>Spielplan</summary>
+                  <ul class="site-nav__submenu"><li><a href="#oper">Oper</a></li></ul>
+                </details>
+              </li>
+            </ul>
+          </details>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <script>
+    window.addEventListener("load", async () => {
+      const result = document.querySelector("#result");
+      if (!matchMedia("(width > 44rem)").matches) {
+        result.textContent = "Test benötigt eine Desktopbreite über 44rem.";
+        return;
+      }
+
+      const nav = document.querySelector(".site-nav");
+      const details = [...nav.querySelectorAll("details")];
+      const checkPosition = async (left, expectedReversed) => {
+        nav.style.left = `${left}px`;
+        nav.dispatchEvent(new PointerEvent("pointerover", { bubbles: true }));
+        await new Promise(requestAnimationFrame);
+        details.forEach((item) => {
+          const rect = item.querySelector(":scope > ul").getBoundingClientRect();
+          if (rect.left < -0.5 || rect.right > innerWidth + 0.5) {
+            throw new Error(`Untermenü außerhalb des Viewports: ${rect.left}–${rect.right}`);
+          }
+          if (item.classList.contains("is-reversed") !== expectedReversed) {
+            throw new Error("Untermenü öffnet in die falsche Richtung.");
+          }
+        });
+      };
+
+      try {
+        await checkPosition(8, false);
+        await checkPosition(innerWidth - nav.offsetWidth - 8, true);
+        result.textContent = "OK: Untermenüs bleiben links und rechts im Viewport.";
+      } catch (error) {
+        result.textContent = `Fehler: ${error.message}`;
+        throw error;
+      }
+    });
+  </script>
+</body>
+</html>

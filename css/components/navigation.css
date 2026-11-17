@@ -172,6 +172,7 @@
     inline-size: max-content;
     max-inline-size: calc(50vw - var(--space-4, 1rem));
     margin-block-start: 0;
+    translate: var(--site-nav-submenu-shift, 0px) 0;
   }
 
   .site-nav__links details[open] > ul,
@@ -180,7 +181,7 @@
     gap: var(--space-1, 0.25rem);
   }
 
-  .site-nav__links > li:nth-last-child(-n + 2):not(:first-child) > details[name="site-nav-level-1"] > ul {
+  .site-nav__links > li > details.is-reversed > ul {
     inset-inline-start: auto;
     inset-inline-end: 0;
   }
@@ -191,7 +192,7 @@
     inset-inline-start: 100%;
   }
 
-  .site-nav__links > li:nth-last-child(-n + 2):not(:first-child) > details[name="site-nav-level-1"] > ul > li > details > ul {
+  .site-nav__links details > ul > li > details.is-reversed > ul {
     inset-inline-start: auto;
     inset-inline-end: 100%;
   }
@@ -200,7 +201,7 @@
     transform: rotate(-45deg);
   }
 
-  .site-nav__links > li:nth-last-child(-n + 2):not(:first-child) > details[name="site-nav-level-1"] > ul summary::after {
+  .site-nav__links details > ul > li > details.is-reversed > summary::after {
     transform: rotate(135deg);
   }
 
