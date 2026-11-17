@@ -118,6 +118,19 @@ Die PHP-Seite über einen PHP-fähigen Webserver aufrufen und Desktop, Mobilansi
 Tastaturbedienung und Links testen. Die Hauptnavigation ist derzeit einmal pro
 Seite vorgesehen, da sie eine feste Panel-ID verwendet.
 
+#### PHP-Demo starten
+
+[`php-demo.php`](php-demo.php) zeigt die Einbindung mit drei Menüebenen und
+einem Footer. Sie kann zusammen mit den oben aufgeführten Dateien ins
+Zielprojekt kopiert werden; die Beispiel-URLs müssen dort angepasst werden.
+Zum lokalen Test im Projektverzeichnis ausführen:
+
+```shell
+php -S localhost:8000
+```
+
+Anschließend `http://localhost:8000/php-demo.php` im Browser öffnen.
+
 ## Beispielseite
 
 Die [Beispielseite](https://clavicarius.github.io/css-php-menu/) zeigt eine Lorem-ipsum-Website mit Haupt- und
