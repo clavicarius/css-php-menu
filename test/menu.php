@@ -40,6 +40,19 @@ check(str_contains($markup, 'href="https://example.com/?a=1&amp;b=2"'), 'Link UR
 check(str_contains($markup, 'aria-label="A &amp; B (öffnet in neuem Tab)"'), 'External link must be labelled.');
 check(str_contains($markup, 'target="_blank" rel="noopener noreferrer"'), 'External link must be safe.');
 
+$mainMenuItems = $items;
+$currentUrl = '/programm/aktuell';
+ob_start();
+require __DIR__ . '/../includes/header.php';
+$header = ob_get_clean();
+check(str_contains($header, '<header>'), 'Header include must render the page header.');
+check(str_contains($header, 'href="/programm/aktuell" aria-current="page"'), 'Header include must use the current URL.');
+unset($mainMenuItems, $currentUrl);
+ob_start();
+require __DIR__ . '/../includes/header.php';
+$defaultHeader = ob_get_clean();
+check(str_contains($defaultHeader, 'href="/"'), 'Header include must use the default main menu.');
+
 $footerItems = [$external];
 $footerCopyright = '<Test & Co>';
 ob_start();
@@ -50,6 +63,11 @@ check(str_contains($footer, '&lt;Test &amp; Co&gt;'), 'Footer copyright must be 
 ob_start();
 require __DIR__ . '/../includes/footer.php';
 ob_end_clean();
+unset($footerItems, $footerCopyright);
+ob_start();
+require __DIR__ . '/../includes/footer.php';
+$defaultFooter = ob_get_clean();
+check(str_contains($defaultFooter, 'Impressum'), 'Footer include must use the default footer menu.');
 
 foreach (['javascript:alert(1)', '//example.com', 'https://user:pass@example.com/', '/bad path'] as $url) {
     $invalidItem = ['title' => 'Test', 'url' => $url, 'external' => false];

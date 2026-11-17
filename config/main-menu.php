@@ -3,53 +3,23 @@
 declare(strict_types=1);
 
 return [
+    ['title' => 'Start', 'url' => '/', 'external' => false],
     [
-        'title' => 'Startseite',
-        'url' => '/',
-        'external' => false,
-    ],
-    [
-        'title' => 'Spielplan',
-        'url' => '/spielplan',
+        'title' => 'Programm',
+        'url' => '/programm',
         'external' => false,
         'children' => [
             [
-                'title' => 'Aktuelle Spielzeit',
-                'url' => '/spielplan/aktuell',
+                'title' => 'Spielplan',
+                'url' => '/programm/spielplan',
                 'external' => false,
+                'children' => [
+                    ['title' => 'Vorstellungen', 'url' => '/programm/spielplan/vorstellungen', 'external' => false],
+                    ['title' => 'Konzerte', 'url' => '/programm/spielplan/konzerte', 'external' => false],
+                ],
             ],
-            [
-                'title' => 'Archiv',
-                'url' => '/spielplan/archiv',
-                'external' => false,
-            ],
+            ['title' => 'Archiv', 'url' => '/programm/archiv', 'external' => false],
         ],
     ],
-    [
-        'title' => 'Besuch',
-        'url' => '/besuch',
-        'external' => false,
-        'children' => [
-            [
-                'title' => 'Tickets',
-                'url' => '/besuch/tickets',
-                'external' => false,
-            ],
-            [
-                'title' => 'Anfahrt',
-                'url' => '/besuch/anfahrt',
-                'external' => false,
-            ],
-        ],
-    ],
-    [
-        'title' => 'Über uns',
-        'url' => '/ueber-uns',
-        'external' => false,
-    ],
-    [
-        'title' => 'Kontakt',
-        'url' => '/kontakt',
-        'external' => false,
-    ],
+    ['title' => 'Kontakt', 'url' => '/kontakt', 'external' => false],
 ];

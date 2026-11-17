@@ -2,34 +2,6 @@
 
 declare(strict_types=1);
 
-require_once __DIR__ . '/src/MenuRenderer.php';
-
-$items = [
-    ['title' => 'Start', 'url' => '/', 'external' => false],
-    [
-        'title' => 'Programm',
-        'url' => '/programm',
-        'external' => false,
-        'children' => [
-            [
-                'title' => 'Spielplan',
-                'url' => '/programm/spielplan',
-                'external' => false,
-                'children' => [
-                    ['title' => 'Vorstellungen', 'url' => '/programm/spielplan/vorstellungen', 'external' => false],
-                    ['title' => 'Konzerte', 'url' => '/programm/spielplan/konzerte', 'external' => false],
-                ],
-            ],
-            ['title' => 'Archiv', 'url' => '/programm/archiv', 'external' => false],
-        ],
-    ],
-    ['title' => 'Kontakt', 'url' => '/kontakt', 'external' => false],
-];
-
-$footerItems = [
-    ['title' => 'Kontakt', 'url' => '/kontakt', 'external' => false],
-    ['title' => 'Impressum', 'url' => '/impressum', 'external' => false],
-];
 $footerCopyright = 'PHP-Menü-Demo';
 ?>
 <!doctype html>
@@ -57,9 +29,7 @@ $footerCopyright = 'PHP-Menü-Demo';
   </style>
 </head>
 <body>
-  <header>
-    <?= (new MenuRenderer($items))->render($_SERVER['REQUEST_URI'] ?? '/') ?>
-  </header>
+  <?php require __DIR__ . '/includes/header.php'; ?>
   <main>
     <h1>PHP-Menü-Demo</h1>
     <p>Diese Seite zeigt die PHP-generierte Navigation mit drei Ebenen und einem Footer.</p>

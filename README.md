@@ -31,6 +31,7 @@ projekt/
 │   ├── MenuRenderer.php
 │   └── MenuItems.php
 └── includes/
+    ├── header.php        (Hauptnavigation)
     └── footer.php        (nur für den Footer)
 ```
 
@@ -81,7 +82,24 @@ Kinder sind Links. URLs müssen mit `/` beginnen oder absolute HTTP(S)-URLs sein
 `external: true` öffnet den Link in einem neuen Tab. Ungültige Daten lösen eine
 `InvalidArgumentException` aus.
 
-#### 4. Footer einbinden (optional)
+#### 4. Header mit Hauptmenü einbinden (optional)
+
+Der Include verwendet standardmäßig `config/main-menu.php` und ermittelt die
+aktuelle URL automatisch. Eigene Menüeinträge können vor dem Include in
+`$mainMenuItems` übergeben werden; `$currentUrl` kann bei Bedarf ebenfalls
+überschrieben werden:
+
+```php
+<?php
+$mainMenuItems = [
+    ['title' => 'Start', 'url' => '/', 'external' => false],
+];
+require __DIR__ . '/includes/header.php';
+```
+
+Ohne eigene Einträge muss `config/main-menu.php` mitkopiert werden.
+
+#### 5. Footer einbinden (optional)
 
 An der gewünschten Stelle in derselben PHP-Seite eigene Daten übergeben:
 
@@ -98,7 +116,7 @@ Ohne eigene Footer-Daten wird `config/footer-menu.php` verwendet; diese Datei
 muss dann ebenfalls kopiert werden. Ohne eigenen Copyright-Text erscheint der
 Name der Beispielseite.
 
-#### 5. Gestaltung anpassen und prüfen
+#### 6. Gestaltung anpassen und prüfen
 
 Die semantischen CSS-Variablen können im Zielprojekt überschrieben werden,
 beispielsweise nach dem Einbinden von `menu.css`:
